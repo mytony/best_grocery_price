@@ -1,0 +1,4 @@
+
+*.pyc
+
+best_price/migrations/*
