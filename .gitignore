@@ -1,4 +1,5 @@
-
 *.pyc
-
 best_price/migrations/*
+.idea/workspace.xml
+.idea/tasks.xml
+
