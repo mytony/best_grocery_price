@@ -19,18 +19,6 @@ def current_datetime(request):
     return HttpResponse(html)
 
 
-# def get_products(request):
-#     product_list = list(Product.objects.all().values_list("title", flat=True))
-#     print(product_list)
-#     return JsonResponse(dict(title=product_list))
-
-
-# def hello_world(request):
-#     return render(request, 'hello_world.html', {
-#         'current_time': str(datetime.now()),
-#     })
-
-
 def get_product(request, name):
     # try:
     # p = Product.objects.get(title=name)
@@ -44,14 +32,7 @@ def get_products(request, page_num, page_size=10):
     page = int(page_num)
     size = int(page_size)
     total_size = Product.objects.count()
-    # if total_size <= page * size - size:
-    #     return HttpResponseNotFound('<h1>It is already the end of list</h1>')
-    # elif total_size < page * size:
-    #     return HttpResponse(serializers.serialize("json", products[page * size - size:]))
-    # else:
-    #     return HttpResponse(serializers.serialize("json", products[page * size - size:page * size]))
 
-    print(products)
     if total_size <= page * size - size:
         return HttpResponseNotFound('<h1>It is already the end of list</h1>')
     elif total_size < page * size:
